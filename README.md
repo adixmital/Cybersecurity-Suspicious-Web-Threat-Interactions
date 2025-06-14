@@ -32,24 +32,3 @@ o	0 (Normal) otherwise
 This approach assumes that "waf_rule" indicates detection by a Web Application Firewall, hence suspicious.
 4. Exploratory Data Analysis (EDA)
 Exploratory Data Analysis (EDA) helps uncover patterns, anomalies, and relationships in the dataset before applying machine learning models. The analysis focuses on understanding how different features behave in relation to the target label is_suspicious.
-1.	Distribution of Bytes Transferred
-A dual histogram was used to examine how incoming (bytes_in) and outgoing (bytes_out) traffic is distributed across requests:
- 
-Observation: The distributions are skewed, with most requests having low byte counts, and a long tail suggesting a few high-volume interactions.
-2.	Protocol Usage Count
-
- 
-Observation: Certain protocols dominate the traffic. This can help in identifying unusual protocols used during attacks.
-3.	Requests by Country
- 
-A small number of countries are responsible for the majority of the traffic.
-4.	Suspicious Destination Ports
- 
-Observation: Some destination ports are more frequently targeted, which could point to common attack vectors.
-5.	Model Building
-Implements both unsupervised anomaly detection and supervised classification to identify suspicious web traffic.
-A. Unsupervised Learning with Isolation Forest
- 
-
-B. Supervised Learning with Random Forest
- 
